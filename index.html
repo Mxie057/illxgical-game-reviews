@@ -10,10 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>STTP</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.svg">
+    <title>iX Reviews</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
         <div class="container">
           <a class="navbar-brand" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-chat-heart-fill" viewBox="0 0 16 16">
@@ -41,7 +42,7 @@
         </div>
     </nav>
 
-    <div class="container square-box d-flex justify-content-center">
+    <div class="container square-box d-flex justify-content-center mb-4">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -83,16 +84,16 @@
     </div>
        
     <div class="container square-box justify-content-center">
-        <div class="container"><h3 class="text-light">Create your own review card below!</h3></div>
 
         <div class="row">
             <div class="col">
-                <div class="formContainer text-light bg-dark col-sm" style="--bs-bg-opacity: .4;">
-                    <form class="gameReviewForm">
-                        <label for="gameTitle">Game Title:</label>
-                        <input type="text"name="gameTitle" id="gameTitle" placeholder="Game Title">
+                <div class="formContainer text-light bg-dark col-sm" style="--bs-bg-opacity: .5;">
+                    <div class="container"><h3 class="text-light pt-2">Create your own review card!</h3></div>
+                    <form class="gameReviewForm px-3">
+                        <label for="gameTitle"><strong>Game Title:</strong></label>
+                        <input type="email" class="form-control mb-3" id="gameLinkInput" name="gameLink" placeholder="https://overwatch.blizzard.com/">
                 
-                        <p>Genre (Select all that apply): </p>
+                        <p><strong>Genre (Select all that apply): </strong></p>
                         <input type="checkbox" id="genreRPG" name="genreRPG" value="RPG">
                         <label for="genreRPG">RPG</label><br>
                         <input type="checkbox" id="genreFPS" name="genreFPS" value="FPS">
@@ -106,7 +107,10 @@
                         <input type="checkbox" id="genreMoba" name="genreMoba" value="Moba">
                         <label for="genreMoba">MOBA</label><br><br>
                 
-                        <input type="text" name="gameReview" id="gameReview" placeholder="Game Review">
+                        <div class="mb-2">
+                            <label for="gameReviewTextarea" class="form-label"><strong>Game review</strong></label>
+                            <textarea class="form-control" id="gameReviewTextarea" rows="3"></textarea>
+                        </div>
                         
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -115,37 +119,42 @@
                         <span class="fa fa-star"></span><br><br>
 
                         <label for="gameLink">Link to Game:</label>
-                        <input type="text" id="gameLink" name="gameLink"><br><br>
+                        <input type="email" class="form-control mb-2" id="gameLinkInput" name="gameLink" placeholder="Example: https://overwatch.blizzard.com/">
 
-                        <label for="gameImage">Upload a game image link:</label>
-                        <input type="text" id="gameImage" name="gameImage"><br><br>
+                        <label for="gameImage">Upload Game image link:</label>
+                        <input type="email" class="form-control mb-2" id="gameLinkInput" name="gameLink" placeholder="Open image in new tab and paste link here">
                         
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" class="btn btn-danger">
                     </form>
                 </div>
             </div>
             <div class="col">
-                <div class="card bg-dark text-white" style="width: 100%; --bs-bg-opacity: .4;">
-                    <div class="row no-gutters">
-                        <div class="col-sm-5">
-                            <img class="card-img" src="https://assets.reedpopcdn.com/overwatch-2-battle-pass-kiriko.jpg/BROK/thumbnail/1200x1200/quality/100/overwatch-2-battle-pass-kiriko.jpg" alt="Overwatch Kiriko">
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="card-body">
-                                <h5 class="card-title">Overwatch 2</h5>
-                                <p class="card-text"><strong>Genre: </strong>FPS</p>
-                                <p class="card-text"><strong>Game Review: </strong>A great team-based competitive shooter to play with your friends. It combines strategy MOBA and Capture the Flag-esque games with FPS to create the utimate gaming experience.</p>
-                                <p>Rating: <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span><br></p>
-                                
-                                <a href="#" class="btn btn-primary">View Game</a>
-                                
+                <div class="cardContainer text-light bg-dark col-sm " style="--bs-bg-opacity: .5;">
+                    <div class="container">
+                        <h3 class="text-light pt-2">Example Card:</h3>
+                    </div>
+                    <div class="card text-light" style="width: 100%;">
+                        <div class="row no-gutters">
+                            <div class="col-sm-5">
+                                <img class="card-img" src="https://assets.reedpopcdn.com/overwatch-2-battle-pass-kiriko.jpg/BROK/thumbnail/1200x1200/quality/100/overwatch-2-battle-pass-kiriko.jpg" alt="Overwatch Kiriko">
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="card-body">
+                                    <h5 class="card-title">Overwatch 2</h5>
+                                    <p class="card-text"><strong>Genre: </strong>FPS</p>
+                                    <p class="card-text"><strong>Game Review: </strong>A great team-based competitive shooter to play with your friends. It combines strategy MOBA and Capture the Flag-esque games with FPS to create the utimate gaming experience.</p>
+                                    <p>Rating: <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span><br></p>
+                                    
+                                    <a href="https://overwatch.blizzard.com/" target="_blank" class="btn btn-danger">View Game</a>                           
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <h4 class="tryText px-3"><br>Try it out yourself!<br><br></h4>
                 </div>
             </div>
         </div>
