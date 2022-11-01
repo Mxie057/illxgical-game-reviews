@@ -43,28 +43,28 @@
     </nav>
 
     <div class="container square-box d-flex justify-content-center mb-4">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="true">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" data-bs-interval="5000">
                     <img src="https://images.gnwcdn.com/2020/usgamer/Valorant-Launch-Art-Ignition-062520.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/valorant-review.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block bg-dark" style="--bs-bg-opacity: .6;">
                         <h5>VALORANT</h5>
                         <p>A 5v5 character-based tactical FPS where precise gunplay meets unique agent abilities.</p>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="5000">
                     <img src="https://www.zelda.com/breath-of-the-wild/assets/media/wallpapers/desktop-1.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block bg-dark" style="--bs-bg-opacity: .6;">
                         <h5>The Legend of Zelda: Breath of the Wild</h5>
                         <p>Step into a world of discovery, exploration and adventure in The Legend of Zelda: Breath of the Wild.</p>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="5000">
                     <img src="https://images.hdqwalls.com/download/4k-cyberpunk-2077-ps-game-sr-1920x1080.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block bg-dark" style="--bs-bg-opacity: .6;">
                         <h3>Cyberpunk 2077</h5>
@@ -87,53 +87,69 @@
 
         <div class="row">
             <div class="col">
-                <div class="formContainer text-light bg-dark col-sm" style="--bs-bg-opacity: .5;">
+                <div class="formContainer text-light bg-dark col-sm" style="--bs-bg-opacity: .6;">
                     <div class="container"><h3 class="text-light pt-2">Create your own review card!</h3></div>
                     <form class="gameReviewForm px-3">
                         <label for="gameTitle"><strong>Game Title:</strong></label>
-                        <input type="email" class="form-control mb-3" id="gameLinkInput" name="gameLink" placeholder="https://overwatch.blizzard.com/">
-                
+                        <input type="email" class="form-control mb-3" id="gameName" name="gameName">
+                        
+
                         <p><strong>Genre (Select all that apply): </strong></p>
-                        <input type="checkbox" id="genreRPG" name="genreRPG" value="RPG">
-                        <label for="genreRPG">RPG</label><br>
-                        <input type="checkbox" id="genreFPS" name="genreFPS" value="FPS">
-                        <label for="genreFPS">FPS</label><br>
-                        <input type="checkbox" id="genreMMORPG" name="genreMMORPG" value="MMORPG">
-                        <label for="genreMMORPG">MMORPG</label><br>
-                        <input type="checkbox" id="genreAction" name="genreAction" value="Action">
-                        <label for="genreAction">Action</label><br>
-                        <input type="checkbox" id="genreAdventure" name="genreAdventure" value="Adventure">
-                        <label for="genreAdventure">Adventure</label><br>
-                        <input type="checkbox" id="genreMoba" name="genreMoba" value="Moba">
-                        <label for="genreMoba">MOBA</label><br><br>
+                        <div id="checkboxGroup">
+                            <input type="checkbox" id="genreRPG" name="genreRPG" value="RPG">
+                            <label for="genreRPG">RPG</label><br>
+                            <input type="checkbox" id="genreFPS" name="genreFPS" value="FPS">
+                            <label for="genreFPS">FPS</label><br>
+                            <input type="checkbox" id="genreMMORPG" name="genreMMORPG" value="MMORPG">
+                            <label for="genreMMORPG">MMORPG</label><br>
+                            <input type="checkbox" id="genreAction" name="genreAction" value="Action">
+                            <label for="genreAction">Action</label><br>
+                            <input type="checkbox" id="genreAdventure" name="genreAdventure" value="Adventure">
+                            <label for="genreAdventure">Adventure</label><br>
+                            <input type="checkbox" id="genreMoba" name="genreMoba" value="Moba">
+                            <label for="genreMoba">MOBA</label><br>
+                            <input type="checkbox" id="genrePlatform" name="genrePlatform" value="Platform">
+                            <label for="genreMMORPG">Platformer</label><br><br>
+                        </div>
+
+
                 
                         <div class="mb-2">
                             <label for="gameReviewTextarea" class="form-label"><strong>Game review</strong></label>
                             <textarea class="form-control" id="gameReviewTextarea" rows="3"></textarea>
                         </div>
                         
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span><br><br>
+                        <div class="starRatingContainer" >
+                            <div class="starrating risingstar d-flex justify-content-end flex-row-reverse">
+                                <input type="radio" id="star5" name="rating" value="5"/>
+                                <label for="star5" title="5 star"></label>
+                                <input type="radio" id="star4" name="rating" value="4"/>
+                                <label for="star4" title="5 star"></label>
+                                <input type="radio" id="star3" name="rating" value="3"/>
+                                <label for="star3" title="5 star"></label>
+                                <input type="radio" id="star2" name="rating" value="2"/>
+                                <label for="star2" title="5 star"></label>
+                                <input type="radio" id="star1" name="rating" value="1"/>
+                                <label for="star1" title="5 star"></label>
+                            </div>
+                        </div>
 
                         <label for="gameLink">Link to Game:</label>
                         <input type="email" class="form-control mb-2" id="gameLinkInput" name="gameLink" placeholder="Example: https://overwatch.blizzard.com/">
 
                         <label for="gameImage">Upload Game image link:</label>
-                        <input type="email" class="form-control mb-2" id="gameLinkInput" name="gameLink" placeholder="Open image in new tab and paste link here">
+                        <input type="email" class="form-control mb-2" id="gameLinkInput" name="gameLink" placeholder="Open image in new tab and paste link here"><br>
                         
-                        <input type="submit" value="Submit" class="btn btn-danger">
+                        <input class="btn btn-danger" type="button" id="submit"  value="Submit" onclick="createCard()">
                     </form>
                 </div>
             </div>
             <div class="col">
-                <div class="cardContainer text-light bg-dark col-sm " style="--bs-bg-opacity: .5;">
+                <div class="cardContainer text-light bg-dark col-sm " style="--bs-bg-opacity: .6;">
                     <div class="container">
                         <h3 class="text-light pt-2">Example Card:</h3>
                     </div>
-                    <div class="card text-light" style="width: 100%;">
+                    <div class="card text-light" style="width: 100%;  background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%)";>
                         <div class="row no-gutters">
                             <div class="col-sm-5">
                                 <img class="card-img" src="https://assets.reedpopcdn.com/overwatch-2-battle-pass-kiriko.jpg/BROK/thumbnail/1200x1200/quality/100/overwatch-2-battle-pass-kiriko.jpg" alt="Overwatch Kiriko">
@@ -147,26 +163,62 @@
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span><br></p>
+                                        <span class="fa fa-star"></span><br></p>
                                     
                                     <a href="https://overwatch.blizzard.com/" target="_blank" class="btn btn-danger">View Game</a>                           
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <h4 class="tryText px-3"><br>Try it out yourself!<br><br></h4>
+                    <div class="cardContainer text-light bg-dark col-sm mt-2 " style="--bs-bg-opacity: .5;">
+                        <div class="card text-light" style="width: 100%; background-image: linear-gradient(to top, #09203f 0%, #537895 100%);">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5">
+                                    <img class="card-img" src="https://upload.wikimedia.org/wikipedia/en/a/a3/Ratchet_%26_Clank_-_Rift_Apart.png" alt="Ratchet and Clank">
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ratchet and Clank: Rift Apart</h5>
+                                        <p class="card-text"><strong>Genre: </strong>Platformer</p>
+                                        <p class="card-text"><strong>Game Review: </strong>Ratchet and Clank is a family favourite franchise that debuted since the early days of the Playstation 2. This next-gen release of the game has all the action-packed fun you're used to with the added bonus of next-gen graphics. Join Ratchet and other familiar faces on their next space-journey!</p>
+                                        <p>Rating: <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span><br></p>
+                                        
+                                        <a href="https://overwatch.blizzard.com/" target="_blank" class="btn btn-danger">View Game</a>                           
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
-
     </div>
 
+    <footer>  
+        <div class="text-center p-3 text-light" style="background-color: rgba(54, 54, 54, 0.2);">
+            © 2022 Copyright: <a class="text-white" href="https://github.com/Mxie057">Github.com/Mxie057</a>
+        </div>
+    </footer>
 
-    <footer>  <div class="text-center p-3 text-light" style="background-color: rgba(54, 54, 54, 0.2);">
-        © 2022 Copyright:
-        <a class="text-white" href="https://github.com/Mxie057">Github.com/Mxie057</a>
-      </div></footer>
+    <script>
+
+        let gameTitle = document.getElementById("gameName");
+
+
+        function saveData(){
+            console.log("hello World");
+        }
+
+
+
+
+    </script>
+
+
 
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
