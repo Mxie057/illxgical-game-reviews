@@ -47,6 +47,8 @@
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="5000">
@@ -66,8 +68,24 @@
                     <div class="carousel-item" data-bs-interval="5000">
                         <img src="https://images.hdqwalls.com/download/4k-cyberpunk-2077-ps-game-sr-1920x1080.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block bg-dark" style="--bs-bg-opacity: .6;">
-                            <h3>Cyberpunk 2077</h5>
+                            <h5>Cyberpunk 2077</h5>
                             <p>An open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="https://images7.alphacoders.com/127/1270484.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block bg-dark" style="--bs-bg-opacity: .6;">
+                            <h5>NBA 2K23</h5>
+                            <p>The 24th installment in the successful NBA 2K franchise. Build a dynasty of your own in MyGM or take the NBA in a new direction with MyLEAGUE.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="https://images7.alphacoders.com/127/1272412.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block bg-dark" style="--bs-bg-opacity: .6;">
+                            <h5>Tekken 8</h5>
+                            <p>Release July 2023. The 8th installment in the popular fighting series Tekken. The longest-running story in a video game franchise is coming back with
+                                state-of-the-art graphics and powerful new mechanics.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -82,10 +100,9 @@
             </div>
         </div>
         
-        <div class="container square-box justify-content-center d-flex">
-
+        <div class="container square-box justify-content-md-center d-flex">
             <div class="row">
-                <div class="col">
+                <div class="col-lg">
                     <div class="formContainer text-light bg-dark col-sm" style="--bs-bg-opacity: .6; height:100%;">
                         <div class="container"><h3 class="text-light pt-2">Create your own review card!</h3></div>
                         <form class="gameReviewForm px-3">
@@ -355,14 +372,12 @@
             getUserRatingInput();
             document.getElementById("modalCard").style = "width: 100%; background-image:" + getRandomGradient();
             
-
            console.log(getRandomGradient());
             userModal.show();
         }
 
         function createGameCardElement(event){
-            event.preventDefault();
-            
+            event.preventDefault();  
             createUserModal();
         }
 
