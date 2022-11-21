@@ -144,7 +144,7 @@
                         <div class="container">
                             <h3 class="text-light pt-2">Example Card:</h3>
                         </div>
-                        <div class="card text-light mt-3" style="width: 100%;  background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%)";>
+                        <div class="card text-light mt-3" style="width: 100%;  background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);">
                             <div class="row no-gutters">
                                 <div class="col-sm-5">
                                     <img class="card-img" src="https://assets.reedpopcdn.com/overwatch-2-battle-pass-kiriko.jpg/BROK/thumbnail/1200x1200/quality/100/overwatch-2-battle-pass-kiriko.jpg" alt="Overwatch Kiriko">
@@ -195,15 +195,15 @@
 
         <!-- Modal -->
         <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="modalReviewerName"><strong>Sergeys Review:</strong> Ratchet and Clank: Rift Apart</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="cardContainer text-light bg-dark col-sm mt-2 " style="--bs-bg-opacity: .5;">
-                    <div class="card text-light" style="width: 100%; background-image: linear-gradient(to top, #09203f 0%, #537895 100%);">
+                <div class="cardContainer text-light bg-dark col-sm mt-2" style="--bs-bg-opacity: .5;">
+                    <div class="card text-light" id="modalCard" style="width: 100%; background-image: linear-gradient(to top, #09203f 0%, #537895 100%);">
                         <div class="row no-gutters">
                             <div class="col-sm-5">
                                 <img class="card-img" id="modalGameImg" src="https://upload.wikimedia.org/wikipedia/en/a/a3/Ratchet_%26_Clank_-_Rift_Apart.png" alt="User Submitted Image">
@@ -230,8 +230,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
         </div>
@@ -244,7 +244,6 @@
     </footer>
 
     <script>
-
         const mainContainer = document.getElementById('mainContainer');
         const radioButtons = document.querySelectorAll('input[name="rating"]');
         const sumbitBtn = document.getElementById("submitFormBtn");
@@ -252,6 +251,12 @@
         const searchQuery = document.getElementById("searchBar");
         const googleLink = 'https://www.google.com/search?q=site%3A+';
         const site = 'illxgicalReviews.com';
+
+        const gradientsArray = ["linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);", "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);",
+            "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);", "radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);",
+            "linear-gradient(135deg, #667eea 0%, #764ba2 100%);", "linear-gradient(to top, #accbee 0%, #e7f0fd 100%);", 
+            "linear-gradient(to top, #0fd850 0%, #f9f047 100%);", "linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%);",
+            "linear-gradient(to top, #09203f 0%, #537895 100%);", "linear-gradient(45deg, #874da2 0%, #c43a30 100%);"]
 
         function googleSearch(event){
             event.preventDefault();
@@ -270,6 +275,12 @@
             list.gameImage = document.getElementById("gameImageLink").value;
             
             return list;
+        }
+
+        function getRandomGradient(){
+            let random = Math.floor(Math.random() * gradientsArray.length);
+
+            return gradientsArray[random];
         }
 
         function getUserRatingInput(){
@@ -342,7 +353,10 @@
             document.getElementById("modalGameLink").setAttribute("href", userInput.gameLink);
 
             getUserRatingInput();
+            document.getElementById("modalCard").style = "width: 100%; background-image:" + getRandomGradient();
+            
 
+           console.log(getRandomGradient());
             userModal.show();
         }
 
@@ -350,10 +364,6 @@
             event.preventDefault();
             
             createUserModal();
-        }
-
-        function validateForm(){
-
         }
 
         sumbitBtn.addEventListener("click", createGameCardElement);

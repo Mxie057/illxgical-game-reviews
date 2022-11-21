@@ -47,9 +47,9 @@ img {
 
 .modal-content {
   background-image: linear-gradient(to bottom, #434343 0%, black 100%);
-  width:800px;
 }
 
-.columns{
-  display:flex;
+.cardContainer{
+  text-shadow: 1px 1px black;
 }
+
