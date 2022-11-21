@@ -1,14 +1,8 @@
 body{
-    font-family: 'Roboto', sans-serif;
     background-image: linear-gradient(to bottom, #434343 0%, black 100%);
     background-size:cover;
     color:white;
     min-height: 100%;
-}
-
-
-.carousel-item {
-  height: 600px;
 }
 
 .card {
@@ -49,4 +43,13 @@ img {
   
 .starrating > input:hover ~ label{ 
   color: #db13059f ;  
+}
+
+.modal-content {
+  background-image: linear-gradient(to bottom, #434343 0%, black 100%);
+  width:800px;
+}
+
+.columns{
+  display:flex;
 }
